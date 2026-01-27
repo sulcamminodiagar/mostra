@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GSAP tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+
+</head>
+
+<body class="loading">
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-text">Loading images...</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <!-- Resolution/Orientation Warning Overlay -->
+    <div class="resolution-overlay" id="resolutionOverlay">
+        <div class="resolution-content">
+            <h1 data-i18n="resolution_warning_title"></h1>
+            <p data-i18n="resolution_warning_text"></p>
+        </div>
+    </div>
+
+    <div id="menuOverlay" class="menu-overlay"></div>
+    <div class="progress_bar_bottom"></div>
+
+    <button id="menuButton" class="menu-button">
+        <span class="menu-icon"></span>
+    </button>
+
+    <div id="menuDrawer" class="menu-drawer">
+        <div class="drawer-header">
+            <button id="closeDrawer" class="close-drawer">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#section1" data-i18n="menu_start"></a></li>
+                <li><a href="#section2" data-i18n="section2_title"></a></li>
+                <li><a href="#section3" data-i18n="section3_title"></a></li>
+                <li><a href="#section4" data-i18n="section4_title"></a></li>
+                <li><a href="#section5" data-i18n="section5_title"></a></li>
+                <li><a href="#section6" data-i18n="section6_title"></a></li>
+                <li><a href="#section7" data-i18n="section7_title"></a></li>
+                <li><a href="#section8" data-i18n="section8_title"></a></li>
+                <li><a href="#section9" data-i18n="section9_title"></a></li>
+                <li><a href="#section10" data-i18n="section10_title"></a></li>
+                <li><a href="#section11" data-i18n="section11_title"></a></li>
+                <li><a href="#section12" data-i18n="section12_title"></a></li>
+                <li><a href="#section13">Sul Cammino di Agar</a></li>
+            </ul>
+        </nav>
+        <div class="lang-selector">
+            <button class="lang-btn" data-lang="it">IT</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+
+    <section class="section" id="section1">
+        <h1 class="title_1_1" data-i18n="section1_title"></h1>
+        <h1 class="title_1_2" data-i18n="section1_title2"></h1>
+        <div class="title_1_3" data-i18n="section1_subtitle"></div>
+        <div class="img_wrapper_1">
+            <img class="img_1" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375123/Mostra/IMG_1693.webp"
+                alt="">
+        </div>
+        <div class="scroll_logo">
+            <img class="scroll_logo_img" src="icons/scrolling.png" alt="">
+        </div>
+        <div class="disclaimer">
+            <h1 class="disclaimer_title" data-i18n="disclaimer"></h1>
+        </div>
+    </section>
+
+    <section class="section" id="section2">
+        <h1 class="title" data-i18n="section2_title"></h1>
+
+        <div class="img_wrapper_2">
+            <div class="img_wrapper_2_1">
+                <img class="img_2_1"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375254/Mostra/IMG_2683.webp" alt="">
+            </div>
+        </div>
+        <div class="img_wrapper_2">
+            <div class="img_wrapper_2_2">
+                <img class="img_2_2"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375304/Mostra/F05_DSC_0038.webp" alt="">
+            </div>
+        </div>
+        <div class="text text_2_1" data-i18n="text_2_1"></div>
+        <div class="img_wrapper_2">
+            <div class="img_wrapper_2_3">
+                <img class="img_2_3"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375351/Mostra/IMG_1746.webp" alt="">
+            </div>
+        </div>
+        <div class="img_wrapper_2">
+            <div class="img_wrapper_2_4">
+                <img class="img_2_4"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375410/Mostra/IMG_1446.webp" alt="">
+            </div>
+        </div>
+        <div class="text text_2_2" data-i18n="text_2_2"></div>
+        <div class="carusell_wrapper_1">
+            <div class="image-row_1">
+                <div class="text text_2_3" data-i18n="text_2_3"></div>
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375449/Mostra/IMG_1539.webp"
+                    alt="Image 1">
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375515/Mostra/F13_DSC_0045.webp"
+                    alt="Image 2">
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769375539/Mostra/F15_DSC_0052.webp"
+                    alt="Image 3">
+                <div class="text text_2_4" data-i18n="text_2_4"></div>
+            </div>
+        </div>
+
+        <div class="img_wrapper_2_5">
+            <img class="img_2_5"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462372/Mostra/IMG_2749.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_2_6">
+            <img class="img_2_6"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462413/Mostra/F15_DSC_0021.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_2_7">
+            <img class="img_2_7"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462433/Mostra/F15_DSC_0037.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_2_8">
+            <img class="img_2_8"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462458/Mostra/F03_DSC_0027.webp" alt="">
+        </div>
+
+        <div class="text text_2_5" data-i18n="text_2_5"></div>
+
+
+    </section>
+
+    <section class="section" id="section3">
+        <h1 class="title" data-i18n="section3_title"></h1>
+
+        <div class="text text_3_1" data-i18n="text_3_1"></div>
+
+        <!-- <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1382.06 784.68">
+                <path id="myPath" d="M21.79,73.08c453.42-.85,906.84-1.71,1360.26-2.56" fill="none" stroke="orange"
+                    stroke-width="10" />
+            </svg>
+        </div> -->
+
+        <div class="img_wrapper_3_1">
+            <img class="img_3_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462564/Mostra/F04_DSC_0008.webp" alt="">
+        </div>
+        <div class="img_wrapper_3_2">
+            <img class="img_3_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462585/Mostra/IMG_1225.webp" alt="">
+        </div>
+        <div class="img_wrapper_3_3">
+            <img class="img_3_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462605/Mostra/IMG_3195.webp" alt="">
+        </div>
+
+        <div class="text text_3_2" data-i18n="text_3_2"></div>
+
+        <div class="img_wrapper_3_4">
+            <img class="img_3_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462629/Mostra/IMG_1265.webp" alt="">
+        </div>
+
+        <div class="text text_3_3" data-i18n="text_3_3"></div>
+
+        <div class="img_wrapper_3_5">
+            <img class="img_3_5" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462649/Mostra/Gato.webp"
+                alt="">
+        </div>
+
+        <div class="img_wrapper_3_6">
+            <img class="img_3_6"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462669/Mostra/IMG_3097.webp" alt="">
+        </div>
+
+        <div class="text text_3_4" data-i18n="text_3_4"></div>
+
+        <div class="text text_3_5" data-i18n="text_3_5"></div>
+
+        <div class="ghost1"></div>
+    </section>
+
+    <section class="section" id="section4">
+        <h1 class="title" data-i18n="section4_title"></h1>
+
+        <div class="img_wrapper_4_1">
+            <img class="img_4_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462734/Mostra/IMG_4271.webp" alt="">
+        </div>
+
+        <div class="text text_4_1" data-i18n="text_4_1"></div>
+
+        <div class="img_wrapper_4_2">
+            <img class="img_4_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462756/Mostra/IMG_1431.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_4_3">
+            <img class="img_4_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462772/Mostra/F08_DSC_0042.webp" alt="">
+        </div>
+
+        <div class="text text_4_2" data-i18n="text_4_2"></div>
+
+        <div class="img_wrapper_4_4">
+            <img class="img_4_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462792/Mostra/F15_DSC_0003.webp" alt="">
+        </div>
+
+        <div class="carusell_wrapper_4">
+            <div class="image-row_4">
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462818/Mostra/IMG_2720.webp"
+                    alt="Image 1">
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462868/Mostra/IMG_4726.webp"
+                    alt="Image 2">
+                <div class="text text_4_3" data-i18n="text_4_3"></div>
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462890/Mostra/IMG_1672.webp"
+                    alt="Image 3">
+                <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769462918/Mostra/IMG_3171.webp"
+                    alt="Image 4">
+            </div>
+        </div>
+
+        <div class="ghost2"></div>
+    </section>
+
+    <section class="section" id="section4b">
+        <div class="slogan_wrapper">
+            <div class="slogan_1" data-i18n="slogan_1"></div>
+            <div class="slogan_2" data-i18n="slogan_2"></div>
+            <div class="slogan_3" data-i18n="slogan_3"></div>
+            <div class="slogan_4" data-i18n="slogan_4"></div>
+        </div>
+    </section>
+
+    <section class="section" id="section5">
+        <h1 class="title" data-i18n="section5_title"></h1>
+
+        <div class="text text_5_1" data-i18n="text_5_1"></div>
+        <div class="text text_5_2" data-i18n="text_5_2"></div>
+        <div class="text text_5_3" data-i18n="text_5_3"></div>
+        <div class="text text_5_4" data-i18n="text_5_4"></div>
+
+        <div class="img_wrapper_5_1">
+            <img class="img_5_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463004/Mostra/IMG_4766.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_5_2">
+            <img class="img_5_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463048/Mostra/F17_DSC_0015.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_5_3">
+            <img class="img_5_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463074/Mostra/F17_DSC_0010.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_5_4">
+            <img class="img_5_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463092/Mostra/F09_DSC_0023.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_red_wall">
+            <img class="img_red_wall"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463119/Mostra/wall_red.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_5_5">
+            <img class="img_5_5"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463136/Mostra/F17_DSC_0057.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_5_6">
+            <img class="img_5_6"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463171/Mostra/F14_DSC_0005.webp" alt="">
+        </div>
+    </section>
+
+
+    <section class="section" id="section6">
+        <h1 class="title" data-i18n="section6_title"></h1>
+        <div class="img_wrapper_6_1_left    ">
+            <img class="img_6_1_left"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463266/Mostra/IMG_1346.webp" alt="">
+        </div>
+        <div class="img_wrapper_6_1_center">
+            <img class="img_6_1_center"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463266/Mostra/IMG_1346.webp" alt="">
+        </div>
+        <div class="img_wrapper_6_1_right">
+            <img class="img_6_1_right"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463266/Mostra/IMG_1346.webp" alt="">
+        </div>
+
+        <div class="text text_6_1" data-i18n="text_6_1"></div>
+
+        <div class="img_wrapper_6_2">
+            <img class="img_6_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463291/Mostra/IMG_1459.webp" alt="">
+        </div>
+
+        <div class="text text_6_2" data-i18n="text_6_2"></div>
+    </section>
+
+    <section class="section" id="section6_2">
+        <div class="img_wrapper_6_3">
+            <img class="img_6_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463315/Mostra/F16_DSC_0044.webp" alt="">
+            <div class="text text_6_3" data-i18n="text_6_3"></div>
+        </div>
+        <div class="img_wrapper_6_4">
+            <img class="img_6_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463334/Mostra/IMG_3868.webp" alt="">
+        </div>
+        <div class="text text_6_4" data-i18n="text_6_4"></div>
+    </section>
+
+
+
+    <section class="section" id="section7">
+        <h1 class="title" data-i18n="section7_title"></h1>
+
+        <div class="carusell_wrapper_7">
+            <div class="image-row_7">
+                <img class="img_7_1"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463382/Mostra/F07_DSC_0029.webp" alt="">
+                <img class="img_7_2"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463416/Mostra/IMG_4697.webp" alt="">
+                <img class="img_7_3"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463438/Mostra/IMG_3896.webp" alt="">
+                <div class="text text_7_1" data-i18n="text_7_1"></div>
+                <img class="img_7_4"
+                    src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463457/Mostra/F19_DSC_0048.webp" alt="">
+            </div>
+        </div>
+        <div class="text text_7_2" data-i18n="text_7_2"></div>
+
+        <div class="img_wrapper_7_5">
+            <img class="img_7_5"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463478/Mostra/F21_DSC_0158.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_7_6 ">
+            <img class="img_7_6"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463497/Mostra/IMG_3653.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_7_7 ">
+            <img class="img_7_7"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463520/Mostra/IMG_4130.webp" alt="">
+        </div>
+
+        <div class="text text_7_3" data-i18n="text_7_3"></div>
+
+        <div class="text text_7_4" data-i18n="text_7_4"></div>
+
+    </section>
+
+    <div class="img_wrapper_7_8">
+        <img class="img_7_8" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769463546/Mostra/IMG_3491.webp"
+            alt="">
+    </div>
+
+    <div class="text text_7_5" data-i18n="text_7_5"></div>
+
+    <section class="section" id="section8">
+        <h1 class="title" data-i18n="section8_title"></h1>
+
+        <div class="img_wrapper_8_1">
+            <img class="img_8_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497283/Mostra/F02_DSC_0083.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_8_2">
+            <img class="img_8_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497305/Mostra/IMG_1194.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_8_3">
+            <img class="img_8_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497333/Mostra/IMG_5161.webp" alt="">
+        </div>
+
+        <div class="text text_8_1" data-i18n="text_8_1"></div>
+
+        <div class="img_wrapper_8_4">
+            <img class="img_8_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497364/Mostra/IMG_5005.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_8_5">
+            <img class="img_8_5" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497386/Mostra/lorena.webp"
+                alt="">
+        </div>
+
+        <div class="text text_8_2" data-i18n="text_8_2"></div>
+
+        <div class="text text_8_2" data-i18n="text_8_2"></div>
+
+        <div class="img_wrapper_8_6">
+            <img class="img_8_6"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497408/Mostra/F10_DSC_0071.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_8_7">
+            <img class="img_8_7"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497428/Mostra/IMG_1601.webp" alt="">
+        </div>
+
+    </section>
+
+    <section class="section" id="section9">
+        <h1 class="title" data-i18n="section9_title"></h1>
+
+        <div class="img_wrapper_9_1">
+            <img class="img_9_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497482/Mostra/IMG_1639.webp" alt="">
+        </div>
+        <div class="img_wrapper_9_2">
+            <img class="img_9_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497500/Mostra/F02_DSC_0079.webp" alt="">
+        </div>
+
+        <div class="text text_9_1" data-i18n="text_9_1"></div>
+
+        <div class="img_wrapper_9_3">
+            <img class="img_9_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497519/Mostra/IMG_2835.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_9_4">
+            <img class="img_9_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497540/Mostra/wall_black.webp" alt="">
+        </div>
+
+        <div class="text text_9_2" data-i18n="text_9_2"></div>
+
+        <div class="img_wrapper_9_5">
+            <img class="img_9_5"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497561/Mostra/IMG_9033.webp" alt="">
+        </div>
+
+        <div class="text text_9_3" data-i18n="text_9_3"></div>
+
+    </section>
+
+    <section class="section" id="section10">
+        <h1 class="title" data-i18n="section10_title"></h1>
+        <div class="img_wrapper_10_1">
+            <img class="img_10_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497611/Mostra/giuliana.webp" alt="">
+        </div>
+
+        <div class="text text_10_1" data-i18n="text_10_1"></div>
+
+        <div class="text text_10_2" data-i18n="text_10_2"></div>
+
+    </section>
+
+    <section class="section" id="section11">
+        <h1 class="title" data-i18n="section11_title"></h1>
+
+        <div class="img_wrapper_11_1">
+            <img class="img_11_1"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497633/Mostra/IMG_2786.webp" alt="">
+        </div>
+
+        <div class="img_wrapper_11_2">
+            <img class="img_11_2"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497650/Mostra/IMG_1481.webp" alt="">
+        </div>
+
+        <div class="text text_11_1" data-i18n="text_11_1"></div>
+
+        <div class="img_wrapper_11_3">
+            <img class="img_11_3"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497669/Mostra/IMG_3214.webp" alt="">
+        </div>
+
+        <div class="text text_11_2" data-i18n="text_11_2"></div>
+
+        <div class="img_wrapper_11_4">
+            <img class="img_11_4"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497688/Mostra/IMG_4709.webp" alt="">
+        </div>
+        <div class="text text_11_3" data-i18n="text_11_3"></div>
+
+        <div class="img_wrapper_11_5">
+            <img class="img_11_5"
+                src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497707/Mostra/IMG_4829.webp" alt="">
+        </div>
+
+        <div class="eye eye_wrapper_1">
+            <img class="eye_1" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497760/Mostra/akur.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_2">
+            <img class="eye_2" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497776/Mostra/francesca.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_3">
+            <img class="eye_3" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497789/Mostra/raika.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_4">
+            <img class="eye_4" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497815/Mostra/malena.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_5">
+            <img class="eye_5" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497829/Mostra/melissa.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_6">
+            <img class="eye_6" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497847/Mostra/tayra.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_7">
+            <img class="eye_7" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497862/Mostra/romina.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_8">
+            <img class="eye_8" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497882/Mostra/silvia.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_9">
+            <img class="eye_9" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497882/Mostra/silvia.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_10">
+            <img class="eye_10" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497912/Mostra/margaret.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_11">
+            <img class="eye_11" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497927/Mostra/chiara.webp"
+                alt="">
+        </div>
+        <div class="eye eye_wrapper_12">
+            <img class="eye_12" src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769497927/Mostra/chiara.webp"
+                alt="">
+        </div>
+    </section>
+
+
+    <section class="section" id="section12">
+
+        <div class="card-container_1">
+            <div class="card card_1">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498050/Mostra/F24_DSC_0010.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498070/Mostra/F23_DSC_0019.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_2">
+            <div class="card card_2">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498088/Mostra/F23_DSC_0022.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498106/Mostra/F22_DSC_0040-2.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_3">
+            <div class="card card_3">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498131/Mostra/IMG_2796.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498154/Mostra/IMG_3632.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_4">
+            <div class="card card_4">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498174/Mostra/IMG_0483.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498194/Mostra/IMG_1070.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_5">
+            <div class="card card_5">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498217/Mostra/3Mattatoio.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498233/Mostra/IMG_5382.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_6">
+            <div class="card card_6">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498263/Mostra/4Mattatio.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498280/Mostra/5Sedia.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_7">
+            <div class="card card_7">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498300/Mostra/IMG_3534.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498321/Mostra/4_1.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container_8">
+            <div class="card card_8">
+                <div class="card-face card-front">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498347/Mostra/F01_DSC_0027.webp"
+                        alt="Front Image">
+                </div>
+                <div class="card-face card-back">
+                    <img src="https://res.cloudinary.com/dr8cq2a2x/image/upload/v1769498365/Mostra/F10_DSC_0054.webp"
+                        alt="Back Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="word_box word_en word_1" data-i18n="cubo_word_1"></div>
+        <div class="word_box word_it word_2" data-i18n="cubo_word_2"></div>
+        <div class="word_box word_en word_3" data-i18n="cubo_word_3"></div>
+        <div class="word_box word_it word_4" data-i18n="cubo_word_4"></div>
+        <div class="word_box word_en word_5" data-i18n="cubo_word_5"></div>
+        <div class="word_box word_it word_6" data-i18n="cubo_word_6"></div>
+        <div class="word_box word_en word_7" data-i18n="cubo_word_7"></div>
+        <div class="word_box word_it word_8" data-i18n="cubo_word_8"></div>
+        <div class="word_box word_en word_9" data-i18n="cubo_word_9"></div>
+        <div class="word_box word_it word_10" data-i18n="cubo_word_10"></div>
+        <div class="word_box word_en word_11" data-i18n="cubo_word_11"></div>
+        <div class="word_box word_it word_12" data-i18n="cubo_word_12"></div>
+        <div class="word_box word_en word_13" data-i18n="cubo_word_13"></div>
+        <div class="word_box word_it word_14" data-i18n="cubo_word_14"></div>
+        <div class="word_box word_en word_15" data-i18n="cubo_word_15"></div>
+        <div class="word_box word_it word_16" data-i18n="cubo_word_16"></div>
+        <div class="word_box word_en word_17" data-i18n="cubo_word_17"></div>
+        <div class="word_box word_it word_18" data-i18n="cubo_word_18"></div>
+        <div class="word_box word_en word_19" data-i18n="cubo_word_19"></div>
+        <div class="word_box word_it word_20" data-i18n="cubo_word_20"></div>
+
+    </section>
+
+    <section class=" section" id="section13">
+        <div id="logo-container" style="width: 100%; height: 100vh; position: relative;"></div>
+        <div class="sec_13_box">
+            <div class="text title_13">Sul Cammino di Agar</div>
+            <div class="text text_13_1" data-i18n="text_13_1"></div>
+            <div class="contact">
+                <div class="social">
+                    <img src="icons/email-w.svg" alt="">
+                    <div class="contact_text">sulcamminodiagar@proton.me</div>
+                </div>
+                <div class="social">
+                    <img src="icons/instagram-w.svg" alt="">
+                    <div class="contact_text"><a href="https://www.instagram.com/sulcamminodiagar/"
+                            target="_blank">@sulcamminodiagar</a></div>
+                </div>
+                <div class="social">
+                    <div class="contact_text">
+                        <strong>IBAN</strong> IT18Y0200803284000107185723<br>
+                        <strong>Causale </strong>Sul Cammino di Agar
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text_13_2" data-i18n="text_13_2"></div>
+    </section>
+
+
+    <!-- Adjust title size -->
+    <script src="https://unpkg.com/fitty@2.3.0/dist/fitty.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/enhanced-smooth-scroll.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/logo_svg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
