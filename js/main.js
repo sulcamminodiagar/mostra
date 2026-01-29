@@ -119,6 +119,9 @@ function enableScrolling() {
 
     // Initialize Menu Drawer Logic
     initMenuDrawer();
+
+    // Initialize Auto Scroll logic
+    initAutoScroll();
 }
 
 function initMenuDrawer() {
@@ -235,6 +238,21 @@ function initMenuDrawer() {
 }
 
 // Adjust title size
+fitty('.title_1_1', {
+    minSize: 48,
+    maxSize: 108,
+    multiLine: false
+});
+fitty('.title_1_2', {
+    minSize: 48,
+    maxSize: 80,
+    multiLine: false
+});
+fitty('.title_1_3', {
+    minSize: 16,
+    maxSize: 80,
+    multiLine: false
+});
 fitty('.title', {
     minSize: 16,
     maxSize: 108,
@@ -264,8 +282,8 @@ function initializeAnimations() {
         }
     });
 
-    tl1.to(".title_1_1", { x: "70vw", duration: 3 })
-        .to(".title_1_2", { x: "70vw", duration: 3 }, "<+=1")
+    tl1.to(".title_1_1", { left: "5vw", duration: 3 })
+        .to(".title_1_2", { left: "5vw", duration: 3 }, "<+=1")
         .to(".title_1_3", { y: "-20vh", duration: 3 }, "<+=1")
         .to(".scroll_logo", { opacity: 0, duration: 3 }, "<+=1")
         .to(".img_wrapper_1", { opacity: 0, duration: 3 })
@@ -295,7 +313,7 @@ function initializeAnimations() {
     let img_2_7_height = document.getElementsByClassName("img_2_7")[0].offsetHeight;
 
     tl2.to(".img_wrapper_2_1", { x: img_2_1_width, opacity: 1, duration: 1 })
-        .to(".img_wrapper_2_2", { x: "-20%", opacity: 1, duration: 1 })
+        .to(".img_wrapper_2_2", { x: "-20%", opacity: 1, duration: 3 })
         .to(".text_2_1", { y: "-80vh", duration: 2 }, "<+=1")
         .to(".text_2_1", { opacity: 0, duration: 2 }, "-=.3")
         .to(".img_wrapper_2_3", { x: -img_2_3_width, opacity: 1, duration: 1 }, "<+=1")
@@ -403,8 +421,8 @@ function initializeAnimations() {
 
     tl4b.to(".slogan_1", { x: - (slogan_1 + window.innerWidth), duration: 3 })
         .to(".slogan_2", { x: - (slogan_2 + window.innerWidth), duration: 3 }, "-=2")
-        .to(".slogan_3", { x: - (slogan_3 + window.innerWidth), duration: 3 }, "-=2.6")
-        .to(".slogan_4", { x: - (slogan_4 + window.innerWidth), duration: 3 }, "-=2.8");
+        .to(".slogan_3", { x: - (slogan_3 + window.innerWidth), duration: 3.1 }, "-=2.6")
+        .to(".slogan_4", { x: - (slogan_4 + window.innerWidth), duration: 3.2 }, "-=2.8");
 
     tl5 = gsap.timeline({
         scrollTrigger: {
@@ -839,4 +857,81 @@ function checkViewport() {
             document.body.style.overflow = '';
         }
     }
+}
+
+/**
+ * Initialize auto-scrolling logic for the play button
+ */
+function initAutoScroll() {
+    const playButton = document.getElementById('play');
+    const speedControls = document.querySelector('.speed');
+    const plusButton = document.getElementById('plus');
+    const minusButton = document.getElementById('minus');
+
+    if (!playButton) return;
+
+    // Initially hide speed controls
+    if (speedControls) {
+        speedControls.style.display = 'none';
+    }
+
+    let isAutoScrolling = false;
+    let autoScrollSpeed = 2.5; // Speed in pixels per frame
+    const minSpeed = 1.5;
+    const maxSpeed = 20;
+
+    // Speed control listeners
+    if (plusButton) {
+        plusButton.addEventListener('click', () => {
+            if (autoScrollSpeed < maxSpeed) {
+                autoScrollSpeed *= 1.5;
+                console.log('Speed increased to:', autoScrollSpeed);
+            }
+        });
+    }
+
+    if (minusButton) {
+        minusButton.addEventListener('click', () => {
+            if (autoScrollSpeed > minSpeed) {
+                autoScrollSpeed *= .5;
+                console.log('Speed decreased to:', autoScrollSpeed);
+            }
+        });
+    }
+
+    playButton.addEventListener('click', () => {
+        isAutoScrolling = !isAutoScrolling;
+
+        if (isAutoScrolling) {
+            playButton.classList.add('playing');
+            // Change image to pause if available, or just use CSS for feedback
+            const img = playButton.querySelector('img');
+            if (img) img.src = 'icons/pause.png'; // Assuming pause.png exists, if not we can use CSS
+
+            // Show speed controls
+            if (speedControls) {
+                speedControls.style.display = 'flex';
+            }
+        } else {
+            playButton.classList.remove('playing');
+            const img = playButton.querySelector('img');
+            if (img) img.src = 'icons/play.png';
+
+            // Hide speed controls
+            if (speedControls) {
+                speedControls.style.display = 'none';
+            }
+        }
+    });
+
+    function autoScrollLoop() {
+        if (isAutoScrolling && window.enhancedSmoothScroll) {
+            window.enhancedSmoothScroll.targetScroll += autoScrollSpeed;
+            window.enhancedSmoothScroll.clampScroll();
+            // console.log("am scrolling" + window.enhancedSmoothScroll.targetScroll);
+        }
+        requestAnimationFrame(autoScrollLoop);
+    }
+
+    autoScrollLoop();
 }
