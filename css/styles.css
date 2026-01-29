@@ -267,6 +267,81 @@ body.loading {
     text-decoration: underline;
 }
 
+.play {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: .5;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.play:hover {
+    opacity: 1;
+}
+
+.play img {
+    width: 60px;
+    height: 60px;
+}
+
+.play.playing {
+    opacity: 1;
+    animation: pulse-play 2s infinite;
+}
+
+@keyframes pulse-play {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 165, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+    }
+}
+
+.speed {
+    position: fixed;
+    bottom: 7px;
+    right: 22px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.speed .plus {
+    background-color: #ff9800;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.speed .minus {
+    background-color: #ff9800;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Sections */
 section {
     min-height: 100vh;
     width: 100%;
@@ -310,26 +385,29 @@ h2 {
     position: absolute;
     top: 20%;
     right: 100vw;
-    width: 60vw;
-    font-size: 8rem;
+    /* width: 60vw;
+    font-size: 6rem; */
     font-family: 'Allura', cursive;
+    z-index: 20;
 }
 
 .title_1_2 {
     position: absolute;
     top: 40%;
     right: 100vw;
-    width: 60vw;
-    font-size: 6rem;
+    /* width: 60vw;
+    font-size: 5rem; */
     font-family: 'Allura', cursive;
+    z-index: 20;
 }
 
 .title_1_3 {
-    font-size: 2rem;
     position: absolute;
     top: 105%;
-    left: 10%;
-    z-index: 10;
+    /* font-size: 2rem; */
+    padding-left: 5vw;
+    padding-right: 10vw;
+    z-index: 20;
 }
 
 .img_wrapper_1 {
