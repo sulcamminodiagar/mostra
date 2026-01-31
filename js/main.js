@@ -5,7 +5,28 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener('DOMContentLoaded', async () => {
     // Initial check for resolution and orientation
     checkViewport();
-    window.addEventListener('resize', checkViewport);
+
+    // Reload page on resize to recalculate all GSAP animations and positions
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        checkViewport();
+
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+
+        // Only reload if width changed (desktop resize or orientation change)
+        // or if height changed significantly (more than 150px, to avoid mobile address bar issues)
+        if (currentWidth !== lastWidth || Math.abs(currentHeight - lastHeight) > 150) {
+            lastWidth = currentWidth;
+            lastHeight = currentHeight;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                window.location.reload();
+            }, 500);
+        }
+    });
 
     const body = document.body;
     const loadingOverlay = document.getElementById('loadingOverlay');
@@ -290,9 +311,9 @@ function initializeAnimations() {
         .to(".title_1_1", { opacity: 0, duration: 3 }, "<+=1")
         .to(".title_1_2", { opacity: 0, duration: 3 }, "<+=1")
         .to(".title_1_3", { opacity: 0, duration: 3 }, "<+=1")
+        .to(".disclaimer_curtain", { opacity: 1, duration: .1 })
         .to(".disclaimer", { opacity: 1, duration: 3 }, "<+=1")
-
-
+        .to(".disclaimer_curtain", { height: 0, duration: 12 });
 
     let tl2 = gsap.timeline({
         scrollTrigger: {
@@ -314,8 +335,8 @@ function initializeAnimations() {
 
     tl2.to(".img_wrapper_2_1", { x: img_2_1_width, opacity: 1, duration: 1 })
         .to(".img_wrapper_2_2", { x: "-20%", opacity: 1, duration: 3 })
-        .to(".text_2_1", { y: "-80vh", duration: 2 }, "<+=1")
-        .to(".text_2_1", { opacity: 0, duration: 2 }, "-=.3")
+        .to(".text_2_1", { y: "-80vh", duration: 4 }, "<+=1")
+        .to(".text_2_1", { opacity: 0, duration: 2 }, "+=.5")
         .to(".img_wrapper_2_3", { x: -img_2_3_width, opacity: 1, duration: 1 }, "<+=1")
         .to(".img_wrapper_2_4", { x: 0, opacity: 1, duration: 1 }, "<+=1")
         .to(".text_2_2", { y: "-80vh", duration: 2 }, "<+=1")
@@ -351,12 +372,12 @@ function initializeAnimations() {
         .to(".img_wrapper_3_2", { y: -(img_3_2_height - window.innerHeight), duration: 6 }, "-=2")   //yPercent
         .to(".img_wrapper_3_2", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_3_3", { opacity: 1, duration: 3 }, "-=2")
-        .to(".text_3_2", { opacity: 1, duration: 3 }, "-=2")
-        .to(".img_3_3", { filter: "blur(0px)", duration: 1 }, "=2")
-        .to(".img_wrapper_3_3", { opacity: 0, duration: 3 }, "-=2")
+        .to(".text_3_2", { opacity: 1, duration: 3 }, "-=0")
+        .to(".img_3_3", { filter: "blur(0px)", duration: 1 }, "-=2")
+        .to(".img_wrapper_3_3", { opacity: 0, duration: 3 }, "-=0")
         .to(".text_3_2", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_3_4", { opacity: 1, duration: 1 }, "-=2")
-        .to(".text_3_3", { y: "-80vh", duration: 4 })
+        .to(".text_3_3", { y: "-85vh", duration: 4 })
         .to(".text_3_3", { opacity: 0, duration: 1 })
         .to(".img_wrapper_3_5", { x: - document.getElementsByClassName("img_wrapper_3_5")[0].offsetWidth, duration: 3 }, "-=2")
         .to(".img_wrapper_3_4", { opacity: 0, duration: 3 }, "-=2")
@@ -389,7 +410,7 @@ function initializeAnimations() {
 
     tl4.to(".img_wrapper_4_1", { y: -(containerWidth_4_1 - window.innerHeight), opacity: 1, duration: 6 })
         .to(".img_wrapper_4_2", { opacity: 1, duration: 3 }, "-=2")
-        .to(".img_4_2", { x: -maxOffset_4_2, duration: 3 }, "-=2")
+        .to(".img_4_2", { x: -maxOffset_4_2, duration: 3 }, "+=0")
         .to(".text_4_1", { opacity: 1, duration: 3 }, "-=4")
         .to(".text_4_1", { opacity: 0, duration: 3 }, "-=1")
         .to(".img_wrapper_4_2", { opacity: 0, duration: 3 }, "-=2")
@@ -474,13 +495,15 @@ function initializeAnimations() {
         }
     });
 
+    img_6_2_width = document.getElementsByClassName("img_6_2")[0].offsetWidth;
+
     tl6.to(".img_wrapper_6_1_left", { x: "-100vw", duration: 3 })
         .to(".img_wrapper_6_1_center", { x: "-67vw", duration: 3 }, "-=1")
         .to(".img_wrapper_6_1_right", { x: "-34.1vw", duration: 3 }, "-=1")
         .to(".text_6_1", { opacity: 1, duration: 3 })
         .to(".img_wrapper_6_1_left, .img_wrapper_6_1_center, .img_wrapper_6_1_right, .text_6_1", { opacity: 0, duration: 3 })
-        .to(".img_wrapper_6_2", { x: "-34vw", duration: 3 })
-        .to(".text_6_2", { x: "50vw", duration: 3 }, "<+=0")
+        .to(".img_wrapper_6_2", { x: -(img_6_2_width + 10), duration: 3 })
+        .to(".text_6_2", { x: "55vw", duration: 3 }, "<+=0")
 
 
     tl6_2 = gsap.timeline({
@@ -510,20 +533,15 @@ function initializeAnimations() {
     });
 
     carousel_width_7 = document.getElementsByClassName("carusell_wrapper_7")[0].offsetWidth;
-    const img_7_4 = document.getElementsByClassName("img_7_4")[0];
-    const img_7_4_width = img_7_4.offsetWidth;
-    carousel_pos_7 = carousel_width_7 - img_7_4_width;
+    const img_7_4 = document.getElementsByClassName("img_7_4")[0].offsetWidth;
+    carousel_pos_7 = carousel_width_7 - img_7_4;
 
-    // Set text_7_2 position based on remaining space to the right of img_7_4
-    gsap.set(".text_7_2", {
-        left: img_7_4_width - img_7_4_width * .1,
-        width: window.innerWidth - img_7_4_width,
-    });
+    text_7_2_height = document.getElementsByClassName("text_7_2")[0].offsetHeight;
 
     tl7.to(".carusell_wrapper_7", { opacity: 1, duration: 1 }, "-=1")
         // .to(".text_7_1", { x: "-140vw", duration: 3 })
         .to(".carusell_wrapper_7", { x: -carousel_pos_7, duration: 12 }, "+=.5")
-        .to(".text_7_2", { y: -(document.querySelector('.text_7_2').scrollHeight) * 2.5, duration: 9 }, "-=1")
+        .to(".text_7_2", { y: -(text_7_2_height + window.innerHeight), duration: 9 }, "-=1")
         .to(".img_wrapper_7_5", { y: "-100%", duration: 3 }, "-=1")
         .to(".img_wrapper_7_6", { y: "100%", duration: 3 })
         .to(".img_wrapper_7_7", { y: "-100%", duration: 3 }, "<=0")
@@ -551,8 +569,8 @@ function initializeAnimations() {
         .to(".img_wrapper_8_2", { y: "-180vh", duration: 5 }, "-=1")
         .to(".img_wrapper_8_1", { opacity: 0, duration: 3 })
         .to(".img_wrapper_8_3", { x: "-100vw", duration: 3 }, "<-=0")
-        .to(".text_8_1", { x: "-35vw", duration: 2 }, "-=1")
-        .to(".text_8_1", { opacity: 0, duration: 2 })
+        .to(".text_8_1", { x: "-45vw", duration: 2 }, "-=1")
+        .to(".text_8_1", { opacity: 0, duration: 2 }, "+=1")
         .to(".img_wrapper_8_3", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_8_4", { x: "50vw", duration: 3 }, "-=2")
         .to(".img_wrapper_8_5", { x: "-50vw", duration: 3 }, "<=0")
@@ -582,7 +600,7 @@ function initializeAnimations() {
         .to(".text_9_1", { x: "50vw", duration: 3 }, "-=1")
         .to(".img_wrapper_9_3", { x: "-100vw", duration: 3 })
         .to(".text_9_1", { x: "-50vw", duration: 3 }, "-=.5")
-        .to(".img_wrapper_9_3, .img_wrapper_9_2", { opacity: 0, duration: 3 })
+        .to(".img_wrapper_9_3, .img_wrapper_9_2", { opacity: 0, duration: 3 }, "+=1")
         .to(".img_wrapper_9_4", { y: "100vh", duration: 3 })
         .to(".text_9_2", { opacity: 1, scale: 2, duration: 3 })
         .to(".text_9_2", { opacity: 0, duration: 3 })
@@ -631,9 +649,9 @@ function initializeAnimations() {
         [eyes[i], eyes[j]] = [eyes[j], eyes[i]];
     }
     const positions = [
-        { x: 3, y: 18 }, { x: 27, y: 25 }, { x: 42, y: 15 }, { x: 68, y: 20 },
-        { x: 15, y: 42 }, { x: 33, y: 58 }, { x: 55, y: 35 }, { x: 70, y: 48 },
-        { x: 8, y: 75 }, { x: 38, y: 70 }, { x: 62, y: 68 }, { x: 69, y: 77 }
+        { x: 2, y: 18 }, { x: 27, y: 25 }, { x: 42, y: 15 }, { x: 58, y: 20 },
+        { x: 15, y: 42 }, { x: 33, y: 58 }, { x: 55, y: 35 }, { x: 60, y: 48 },
+        { x: 5, y: 75 }, { x: 38, y: 70 }, { x: 62, y: 68 }, { x: 3, y: 60 }
     ];
 
     for (let i = positions.length - 1; i > 0; i--) {
@@ -698,43 +716,43 @@ function initializeAnimations() {
 
     tl12.to(".card_1", { rotationY: 180, duration: 3 })
         .to(".word_1", { opacity: 1, duration: 3 })
-        .to(".card_2", { rotationY: 180, duration: 3 }, "-=2.5")
+        .to(".card_2", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_2", { opacity: 1, duration: 3 })
         .to(".card-container_1", { opacity: 0, duration: 3 })
         .to(".word_3", { opacity: 1, duration: 3 })
-        .to(".card-container_2", { opacity: 0, duration: 3 }, "-=2.5")
+        .to(".card-container_2", { opacity: 0, duration: 3 }, "-=4")
         .to(".word_4", { opacity: 1, duration: 3 })
         .to(".card-container_3", { opacity: 1, duration: 3 })
         .to(".word_5", { opacity: 1, duration: 3 })
-        .to(".card-container_4", { opacity: 1, duration: 3 }, "-=2.5")
+        .to(".card-container_4", { opacity: 1, duration: 3 }, "-=4")
         .to(".word_6", { opacity: 1, duration: 3 })
         .to(".card_3", { rotationY: 180, duration: 3 })
         .to(".word_7", { opacity: 1, duration: 3 })
-        .to(".card_4", { rotationY: 180, duration: 3 }, "-=2.5")
+        .to(".card_4", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_8", { opacity: 1, duration: 3 })
         .to(".card-container_3", { opacity: 0, duration: 3 })
         .to(".word_9", { opacity: 1, duration: 3 })
-        .to(".card-container_4", { opacity: 0, duration: 3 }, "-=2.5")
+        .to(".card-container_4", { opacity: 0, duration: 3 }, "-=4")
         .to(".word_10", { opacity: 1, duration: 3 })
         .to(".card-container_5", { opacity: 1, duration: 3 })
         .to(".word_11", { opacity: 1, duration: 3 })
-        .to(".card-container_6", { opacity: 1, duration: 3 }, "-=2.5")
+        .to(".card-container_6", { opacity: 1, duration: 3 }, "-=4")
         .to(".word_12", { opacity: 1, duration: 3 })
         .to(".card_5", { rotationY: 180, duration: 3 })
         .to(".word_13", { opacity: 1, duration: 3 })
-        .to(".card_6", { rotationY: 180, duration: 3 }, "-=2.5")
+        .to(".card_6", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_14", { opacity: 1, duration: 3 })
         .to(".card-container_5", { opacity: 0, duration: 3 })
         .to(".word_15", { opacity: 1, duration: 3 })
-        .to(".card-container_6", { opacity: 0, duration: 3 }, "-=2.5")
+        .to(".card-container_6", { opacity: 0, duration: 3 }, "-=4")
         .to(".word_16", { opacity: 1, duration: 3 })
         .to(".card-container_7", { opacity: 1, duration: 3 })
         .to(".word_17", { opacity: 1, duration: 3 })
-        .to(".card-container_8", { opacity: 1, duration: 3 }, "-=2.5")
+        .to(".card-container_8", { opacity: 1, duration: 3 }, "-=4")
         .to(".word_18", { opacity: 1, duration: 3 })
         .to(".card_7", { rotationY: 180, duration: 3 })
         .to(".word_19", { opacity: 1, duration: 3 })
-        .to(".card_8", { rotationY: 180, duration: 3 }, "-=2.5")
+        .to(".card_8", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_20", { opacity: 1, duration: 3 })
 
 
@@ -802,6 +820,8 @@ function initializeAnimations() {
                 }
             });
 
+            let text_13_2_width = document.getElementsByClassName("text_13_2")[0].offsetWidth;
+
             // Animate the dash offset to reveal
             tl13.to(".title_13", { left: "0vw", duration: .5, ease: "power2.out" })
                 .to(path1, { strokeDashoffset: 0, duration: 1, ease: "power2.out" }, "<")
@@ -810,7 +830,7 @@ function initializeAnimations() {
                 .to(ball_blue, { opacity: 1, duration: 1, ease: "power2.out" }, "<+=.3")
                 .to(ball_yellow, { opacity: 1, duration: 1, ease: "power2.out" }, "<+=.2")
                 .to(path2, { strokeDashoffset: 0, duration: 1, ease: "power2.out" }, "<-=1")
-                .to(".text_13_2", { x: "60vw", duration: .5, ease: "power2.out" }, "<+=.1")
+                .to(".text_13_2", { x: (text_13_2_width + window.innerWidth / 20), duration: .5, ease: "power2.out" }, "<+=.1")
                 .to(background_green, { opacity: .33, duration: .5, ease: "power2.out" }, "-=1")
                 .to(background_blue, { opacity: .33, duration: .5, ease: "power2.out" }, "<+=.1")
                 .to(".contact", { opacity: 1, duration: .5, ease: "power2.out" }, "<+=.1")
@@ -845,7 +865,7 @@ function checkViewport() {
     if (!resolutionOverlay) return;
 
     const isHorizontal = window.innerWidth > window.innerHeight;
-    const isWidthEnough = window.innerWidth >= 1440;
+    const isWidthEnough = window.innerWidth >= 1360;
 
     if (!isHorizontal || !isWidthEnough) {
         resolutionOverlay.classList.add('visible');

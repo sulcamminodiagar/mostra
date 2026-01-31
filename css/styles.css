@@ -356,7 +356,7 @@ section {
     padding-right: 5%;
     margin-top: 1%;
     z-index: 20;
-    color: white;
+    color: rgb(180, 180, 180);
     font-family: 'Allura', cursive;
 }
 
@@ -385,6 +385,7 @@ h2 {
     position: absolute;
     top: 20%;
     right: 100vw;
+    color: rgb(180, 180, 180);
     /* width: 60vw;
     font-size: 6rem; */
     font-family: 'Allura', cursive;
@@ -395,6 +396,7 @@ h2 {
     position: absolute;
     top: 40%;
     right: 100vw;
+    color: rgb(180, 180, 180);
     /* width: 60vw;
     font-size: 5rem; */
     font-family: 'Allura', cursive;
@@ -405,6 +407,7 @@ h2 {
     position: absolute;
     top: 105%;
     /* font-size: 2rem; */
+    color: rgb(180, 180, 180);
     padding-left: 5vw;
     padding-right: 10vw;
     z-index: 20;
@@ -452,7 +455,7 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 65vw;
+    width: 75vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -465,6 +468,18 @@ h2 {
     font-size: 2rem;
     text-align: center;
     font-weight: 100;
+}
+
+.disclaimer_curtain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: black;
+    opacity: 0;
+    z-index: 10;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20vh, black 100%);
 }
 
 strong,
@@ -540,13 +555,13 @@ b {
     position: absolute;
     top: 100%;
     left: 20%;
-    width: 50%;
+    width: 60%;
 }
 
 .text_2_3,
 .text_2_4 {
     padding-top: 10vh;
-    width: 30vw;
+    width: 40vw;
 }
 
 .carusell_wrapper_1 {
@@ -643,9 +658,9 @@ b {
 
 .text_2_5 {
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 40vw;
+    top: 15%;
+    right: 7%;
+    width: 45vw;
     opacity: 0;
 }
 
@@ -806,10 +821,9 @@ b {
 
 .text_4_1 {
     position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-30%, -50%);
-    width: 40%;
+    top: 10%;
+    left: 5%;
+    width: 45%;
     opacity: 0;
 }
 
@@ -852,9 +866,9 @@ b {
 
 .text_4_2 {
     position: absolute;
-    top: 30vh;
-    left: 60%;
-    width: 30%;
+    top: 15vh;
+    left: 57%;
+    width: 35%;
     opacity: 0;
 }
 
@@ -901,7 +915,7 @@ b {
 }
 
 .text_4_3 {
-    width: 30vw;
+    width: 40vw;
 }
 
 /* Section 4b */
@@ -926,7 +940,7 @@ b {
 
 .slogan_1 {
     position: absolute;
-    top: 5vh;
+    top: 2vh;
     left: 100vw;
     white-space: nowrap;
     padding-right: 20vw;
@@ -934,7 +948,7 @@ b {
 
 .slogan_2 {
     position: absolute;
-    top: 25vh;
+    top: 22vh;
     left: 100vw;
     white-space: nowrap;
     padding-right: 20vw;
@@ -942,7 +956,7 @@ b {
 
 .slogan_3 {
     position: absolute;
-    top: 45vh;
+    top: 42vh;
     left: 100vw;
     white-space: nowrap;
     padding-right: 20vw;
@@ -950,7 +964,7 @@ b {
 
 .slogan_4 {
     position: absolute;
-    top: 65vh;
+    top: 62vh;
     left: 100vw;
     white-space: nowrap;
     padding-right: 20vw;
@@ -969,16 +983,16 @@ b {
 .text_5_1 {
     position: absolute;
     top: 100%;
-    left: 10vw;
-    width: 30vw;
+    left: 5vw;
+    width: 35vw;
     opacity: 1;
 }
 
 .text_5_2 {
     position: absolute;
-    top: 20vh;
-    left: 5vw;
-    width: 40%;
+    top: 10vh;
+    left: 3vw;
+    width: 45%;
     opacity: 0;
 }
 
@@ -1155,7 +1169,7 @@ b {
 
 .text_6_1 {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 60%;
     width: 30%;
     opacity: 0;
@@ -1176,9 +1190,11 @@ b {
 
 .text_6_2 {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     right: 100vw;
-    width: 40%;
+    line-height: 1.2;
+    font-size: 1.8rem;
+    width: 45%;
     opacity: 1;
 }
 
@@ -1221,7 +1237,7 @@ b {
 .text_6_4 {
     position: absolute;
     top: 10%;
-    left: 65%;
+    left: 62%;
     width: 30%;
     opacity: 0;
 }
@@ -1261,9 +1277,9 @@ b {
 }
 
 .text_7_2 {
-    position: absolute;
+    position: relative;
     top: 100vh;
-
+    width: 30vw;
 }
 
 .img_wrapper_7_5 {
@@ -1283,7 +1299,7 @@ b {
 
 .img_wrapper_7_6 {
     position: absolute;
-    top: -150%;
+    bottom: 100vh;
     left: 0;
     opacity: 1;
 }
@@ -1324,7 +1340,7 @@ b {
 
 .text_7_3 {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     left: -50vw;
     width: 40vw;
 }
@@ -1366,7 +1382,7 @@ b {
 .img_wrapper_8_2 {
     position: absolute;
     top: 100vh;
-    left: 70vw;
+    left: 65vw;
 }
 
 .img_8_2 {
@@ -1391,9 +1407,9 @@ b {
 
 .text_8_1 {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     left: 100vw;
-    width: 30%;
+    width: 40%;
 }
 
 .img_wrapper_8_4 {
@@ -1422,9 +1438,10 @@ b {
 
 .text_8_2 {
     position: absolute;
-    top: 20%;
-    left: 25%;
-    width: 50%;
+    top: 17%;
+    left: 20%;
+    width: 60%;
+    text-align: center;
     opacity: 0;
     z-index: 0;
 }
@@ -1484,7 +1501,7 @@ b {
 
 .text_9_1 {
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     left: -45vw;
     width: 40%;
 }
@@ -1630,7 +1647,7 @@ b {
 
 .text_11_2 {
     position: absolute;
-    top: 30vh;
+    top: 15vh;
     left: 5vw;
     width: 40%;
     opacity: 0;
@@ -1680,8 +1697,8 @@ b {
 
 .eye>img {
     border-radius: 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border: white 1px solid;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    border: rgb(53, 53, 53) 3px solid;
 }
 
 /* section 12 */
@@ -1712,12 +1729,12 @@ b {
     height: 100%;
     backface-visibility: hidden;
     /* Hides the back side when facing away */
-    border-radius: 15px;
+    border-radius: 1vw;
     overflow: hidden;
     /* Ensures images respect border-radius */
     top: 0;
     left: 0;
-    border: 1px solid white;
+    border: 5px solid white;
 }
 
 /* Back of the card - initially rotated 180 degrees */
@@ -1949,7 +1966,7 @@ b {
 
 .title_13 {
     position: absolute;
-    top: 0;
+    top: 5vh;
     left: 50vw;
     opacity: 1;
     font-family: 'Allura', cursive;
@@ -1959,10 +1976,12 @@ b {
     position: absolute;
     top: 20vh;
     left: 0;
-    opacity: 1;
+    font-family: 'Lora', Georgia, serif;
     font-size: 1.5rem;
-    margin-right: 5vw;
     opacity: 0;
+    color: white;
+    padding-right: 5vw;
+    z-index: 10;
 }
 
 .contact {
@@ -1973,7 +1992,6 @@ b {
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 5vh;
-    padding-left: 2rem;
     opacity: 0;
 }
 
@@ -1981,7 +1999,7 @@ b {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .social img {
@@ -2002,8 +2020,8 @@ b {
     position: absolute;
     bottom: 20vh;
     right: 100vw;
-    width: 50vw;
     font-family: 'Allura', cursive;
     font-size: 4rem;
     opacity: 1;
+    white-space: nowrap;
 }
