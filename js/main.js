@@ -517,7 +517,8 @@ function initializeAnimations() {
         }
     });
 
-    tl6_2.to(".img_wrapper_6_3", { x: "-100vw", duration: 2 }, "+=.5")
+    tl6_2.to(".text_6_3", { opacity: 1, duration: 2 })
+        .to(".img_wrapper_6_3", { x: "-100vw", duration: 2 }, "+=.5")
         .to(".text_6_4", { opacity: 1, duration: 2 })
 
 
@@ -541,7 +542,7 @@ function initializeAnimations() {
     tl7.to(".carusell_wrapper_7", { opacity: 1, duration: 1 }, "-=1")
         // .to(".text_7_1", { x: "-140vw", duration: 3 })
         .to(".carusell_wrapper_7", { x: -carousel_pos_7, duration: 12 }, "+=.5")
-        .to(".text_7_2", { y: -(text_7_2_height + window.innerHeight), duration: 9 }, "-=1")
+        .to(".text_7_2", { y: -(text_7_2_height + window.innerHeight), duration: 9 }, "-=3")
         .to(".img_wrapper_7_5", { y: "-100%", duration: 3 }, "-=1")
         .to(".img_wrapper_7_6", { y: "100%", duration: 3 })
         .to(".img_wrapper_7_7", { y: "-100%", duration: 3 }, "<=0")
