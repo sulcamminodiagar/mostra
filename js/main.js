@@ -826,17 +826,17 @@ function initializeAnimations() {
             // Animate the dash offset to reveal
             tl13.to(".title_13", { left: "0vw", duration: .5, ease: "power2.out" })
                 .to(path1, { strokeDashoffset: 0, duration: 1, ease: "power2.out" }, "<")
+                .to(ball_red, { opacity: 1, duration: 1, ease: "power2.out" }, "-=.8")
+                .to(ball_yellow, { opacity: 1, duration: 1, ease: "power2.out" }, "-=.8")
                 .to(".text_13_1", { opacity: 1, duration: .5 })
-                .to(ball_red, { opacity: 1, duration: 1, ease: "power2.out" }, "<+=0")
-                .to(ball_blue, { opacity: 1, duration: 1, ease: "power2.out" }, "<+=.3")
-                .to(ball_yellow, { opacity: 1, duration: 1, ease: "power2.out" }, "<+=.2")
                 .to(path2, { strokeDashoffset: 0, duration: 1, ease: "power2.out" }, "<-=1")
+                .to(ball_blue, { opacity: 1, duration: 1, ease: "power2.out" }, "-=1")
                 .to(".text_13_2", { x: (text_13_2_width + window.innerWidth / 20), duration: .5, ease: "power2.out" }, "<+=.1")
                 .to(background_green, { opacity: .33, duration: .5, ease: "power2.out" }, "-=1")
                 .to(background_blue, { opacity: .33, duration: .5, ease: "power2.out" }, "<+=.1")
                 .to(".contact", { opacity: 1, duration: .5, ease: "power2.out" }, "<+=.1")
                 .to(background_yellow, { opacity: .33, duration: .5, ease: "power2.out" }, "<+=.2")
-                .to(background_orange, { opacity: .33, duration: .5, ease: "power2.out" }, "<+=.3")
+                .to(background_orange, { opacity: .33, duration: .5, ease: "power2.out" }, "<+=0")
             ScrollTrigger.refresh();
         }
     } else {
@@ -888,6 +888,7 @@ function initAutoScroll() {
     const speedControls = document.querySelector('.speed');
     const plusButton = document.getElementById('plus');
     const minusButton = document.getElementById('minus');
+    const speedIndexDisplay = document.getElementById('speedIndex');
 
     if (!playButton) return;
 
@@ -897,15 +898,17 @@ function initAutoScroll() {
     }
 
     let isAutoScrolling = false;
-    let autoScrollSpeed = 2.5; // Speed in pixels per frame
-    const minSpeed = 1.5;
-    const maxSpeed = 20;
+    let autoScrollSpeed = 2.11; // Speed in pixels per frame
+    let speedArray = [1, 2.11, 4.47, 9.46, 20];
+    let speedIndex = 1;
 
     // Speed control listeners
     if (plusButton) {
         plusButton.addEventListener('click', () => {
-            if (autoScrollSpeed < maxSpeed) {
-                autoScrollSpeed *= 1.5;
+            if (speedIndex < speedArray.length - 1) {
+                speedIndex++;
+                autoScrollSpeed = speedArray[speedIndex];
+                speedIndexDisplay.textContent = speedIndex + 1;
                 console.log('Speed increased to:', autoScrollSpeed);
             }
         });
@@ -913,8 +916,10 @@ function initAutoScroll() {
 
     if (minusButton) {
         minusButton.addEventListener('click', () => {
-            if (autoScrollSpeed > minSpeed) {
-                autoScrollSpeed *= .5;
+            if (speedIndex > 0) {
+                speedIndex--;
+                autoScrollSpeed = speedArray[speedIndex];
+                speedIndexDisplay.textContent = speedIndex + 1;
                 console.log('Speed decreased to:', autoScrollSpeed);
             }
         });

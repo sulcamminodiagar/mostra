@@ -319,6 +319,7 @@ body.loading {
     gap: 5px;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
 .speed .plus {
@@ -339,6 +340,15 @@ body.loading {
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.speedIndex {
+    background-color: #ff9800;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 30%;
 }
 
 /* Sections */
