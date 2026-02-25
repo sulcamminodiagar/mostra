@@ -307,10 +307,10 @@ function initializeAnimations() {
         .to(".title_1_2", { left: "5vw", duration: 3 }, "<+=1")
         .to(".title_1_3", { y: "-20vh", duration: 3 }, "<+=1")
         .to(".scroll_logo", { opacity: 0, duration: 3 }, "<+=1")
-        .to(".img_wrapper_1", { opacity: 0, duration: 3 })
         .to(".title_1_1", { opacity: 0, duration: 3 }, "<+=1")
         .to(".title_1_2", { opacity: 0, duration: 3 }, "<+=1")
         .to(".title_1_3", { opacity: 0, duration: 3 }, "<+=1")
+        .to(".img_wrapper_1", { opacity: 0, duration: 3 })
         .to(".disclaimer_curtain", { opacity: 1, duration: .1 })
         .to(".disclaimer", { opacity: 1, duration: 3 }, "<+=1")
         .to(".disclaimer_curtain", { height: 0, duration: 12 });
@@ -319,7 +319,7 @@ function initializeAnimations() {
         scrollTrigger: {
             trigger: "#section2",
             start: "top top",
-            end: "+=1800%", // Longer scroll distance for the sequence
+            end: "+=2200%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -332,22 +332,27 @@ function initializeAnimations() {
     let img_2_5_height = document.getElementsByClassName("img_2_5")[0].offsetHeight;
     let img_2_6_height = document.getElementsByClassName("img_2_6")[0].offsetHeight;
     let img_2_7_height = document.getElementsByClassName("img_2_7")[0].offsetHeight;
+    let tb1_width = document.getElementsByClassName("tb_1")[0].offsetWidth;
 
-    tl2.to(".img_wrapper_2_1", { x: img_2_1_width, opacity: 1, duration: 1 })
-        .to(".img_wrapper_2_2", { x: "-20%", opacity: 1, duration: 3 })
+    tl2.to(".tb_1", {opacity: 1, duration: 3 })
+        .to(".tb_1", { x: - (tb1_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_1", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_1", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_2_1", { x: img_2_1_width, opacity: 1, duration: 3 }, "<+=3")
+        .to(".img_wrapper_2_2", { x: "-20%", opacity: 1, duration: 6 })
         .to(".text_2_1", { y: "-80vh", duration: 4 }, "<+=1")
         .to(".text_2_1", { opacity: 0, duration: 2 }, "+=.5")
-        .to(".img_wrapper_2_3", { x: -img_2_3_width, opacity: 1, duration: 1 }, "<+=1")
-        .to(".img_wrapper_2_4", { x: 0, opacity: 1, duration: 1 }, "<+=1")
+        .to(".img_wrapper_2_3", { x: -img_2_3_width, opacity: 1, duration: 3 }, "<+=1")
+        .to(".img_wrapper_2_4", { x: 0, opacity: 1, duration: 3 }, "<+=1")
         .to(".text_2_2", { y: "-80vh", duration: 2 }, "<+=1")
-        .to(".text_2_2", { opacity: 0, duration: 2 }, "-=.3")
+        .to(".text_2_2", { opacity: 0, duration: 2 }, "+=2")
         .to(".img_wrapper_2_1, .img_wrapper_2_2, .img_wrapper_2_3, .img_wrapper_2_4", { opacity: 0, duration: 1 })
         .to(".carusell_wrapper_1", { x: -carousel_width_1, duration: 15 }, "-=.3")
         .to(".img_wrapper_2_5", { y: -img_2_5_height, opacity: 1, duration: 6, ease: "power2.in" }, "-=0")
         .to(".img_wrapper_2_6", { y: -img_2_6_height, duration: 3 })
         .to(".img_wrapper_2_7", { y: -img_2_7_height, duration: 3 })
         .to(".text_2_5", { opacity: 1, duration: 3 }, "-=1")
-        .to(".text_2_5", { opacity: 0, duration: 3 }, "-=1")
+        .to(".text_2_5", { opacity: 0, duration: 3 }, "+=1")
         .to(".img_wrapper_2_8", { x: "-100vw", duration: 3 }, "-=1")
 
     let tl3 = gsap.timeline({
@@ -363,9 +368,13 @@ function initializeAnimations() {
     });
 
     let img_3_2_height = document.getElementsByClassName("img_3_2")[0].offsetHeight;
+    let tb2_width = document.getElementsByClassName("tb_2")[0].offsetWidth;
 
-
-    tl3.to(".text_3_1", { opacity: 1, duration: 3 })
+    tl3.to(".tb_2", {opacity: 1, duration: 3 })
+        .to(".tb_2", { x: - (tb2_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_2", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_2", { opacity: .7, duration: 3 }, "-=3")
+        .to(".text_3_1", { opacity: 1, duration: 3 })
         .to(".img_wrapper_3_1", { opacity: 1, duration: 3 }, "<-=2")
         .to(".img_wrapper_3_1, .text_3_1", { opacity: 0, duration: 3 })
         .to(".img_wrapper_3_2", { opacity: 1, duration: 3 }, "-=2")
@@ -379,20 +388,20 @@ function initializeAnimations() {
         .to(".img_wrapper_3_4", { opacity: 1, duration: 1 }, "-=2")
         .to(".text_3_3", { y: "-85vh", duration: 4 })
         .to(".text_3_3", { opacity: 0, duration: 1 })
-        .to(".img_wrapper_3_5", { x: - document.getElementsByClassName("img_wrapper_3_5")[0].offsetWidth, duration: 3 }, "-=2")
-        .to(".img_wrapper_3_4", { opacity: 0, duration: 3 }, "-=2")
-        .to(".text_3_4", { opacity: 1, duration: 3 }, "<-=0")
+        .to(".img_wrapper_3_5", { x: - document.getElementsByClassName("img_wrapper_3_5")[0].offsetWidth, duration: 3 }, "+=0")
+        .to(".img_wrapper_3_4", { opacity: 0, duration: 2 }, "-=2")
+        .to(".text_3_4", { opacity: 1, duration: 3 }, "-=0")
         .to(".img_wrapper_3_5", { x: window.innerWidth / 2, duration: 3 }, "+=0.5")
-        .to(".text_3_4", { opacity: 0, duration: 1 })
+        .to(".text_3_4", { opacity: 0, duration: 1 }, "-=2")
         .to(".img_wrapper_3_6", { opacity: 1, duration: 1 }, "+=0.5")
         .to(".text_3_5", { opacity: 1, duration: 2 }, "+=0.5")
-        .to(".text_3_5", { opacity: 0, duration: 2 }, "+=0.5")
+        .to(".text_3_5", { opacity: 0, duration: 2 }, "+=2")
 
     let tl4 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section4",
             start: "top top",
-            end: "+=2000%", // Longer scroll distance for the sequence
+            end: "+=2200%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -407,12 +416,17 @@ function initializeAnimations() {
     document.querySelector('.img_4_2').style.height = containerHeight_4_2 + 'px';
     const imgWidth_4_2 = document.querySelector('.img_4_2').naturalWidth * (containerHeight_4_2 / document.querySelector('.img_4_2').naturalHeight);
     const maxOffset_4_2 = imgWidth_4_2 - containerWidth_4_2;
+    let tb_3_width = document.getElementsByClassName("tb_3")[0].offsetWidth;
 
-    tl4.to(".img_wrapper_4_1", { y: -(containerWidth_4_1 - window.innerHeight), opacity: 1, duration: 6 })
+    tl4.to(".tb_3", { opacity: 1, duration: 3 })
+        .to(".tb_3", { x: - (tb_3_width + (window.innerWidth/2)), duration: 18 }, "<=0")
+        .to(".tb_3", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_3", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_4_1", { y: -(containerWidth_4_1 - window.innerHeight), opacity: 1, duration: 6 })
         .to(".img_wrapper_4_2", { opacity: 1, duration: 3 }, "-=2")
         .to(".img_4_2", { x: -maxOffset_4_2, duration: 3 }, "+=0")
         .to(".text_4_1", { opacity: 1, duration: 3 }, "-=4")
-        .to(".text_4_1", { opacity: 0, duration: 3 }, "-=1")
+        .to(".text_4_1", { opacity: 0, duration: 3 }, "-=0")
         .to(".img_wrapper_4_2", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_4_3", { opacity: 1, duration: 3 }, "-=2")
         .to(".img_4_3", { scale: 2, duration: 3 }, "+=2")
@@ -427,7 +441,7 @@ function initializeAnimations() {
         scrollTrigger: {
             trigger: "#section4b",
             start: "top top",
-            end: "+=1000%", // Longer scroll distance for the sequence
+            end: "+=800%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -443,13 +457,14 @@ function initializeAnimations() {
     tl4b.to(".slogan_1", { x: - (slogan_1 + window.innerWidth), duration: 3 })
         .to(".slogan_2", { x: - (slogan_2 + window.innerWidth), duration: 3 }, "-=2")
         .to(".slogan_3", { x: - (slogan_3 + window.innerWidth), duration: 3.1 }, "-=2.6")
-        .to(".slogan_4", { x: - (slogan_4 + window.innerWidth), duration: 3.2 }, "-=2.8");
+        .to(".slogan_4", { x: - (slogan_4 + (window.innerWidth/2)), duration: 2 }, "-=2.8")
+        .to(".slogan_1, .slogan_2, .slogan_3, .slogan_4", { opacity: 0, duration: 3 }, "-=2.5")
 
     tl5 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section5",
             start: "top top",
-            end: "+=2200%", // Longer scroll distance for the sequence
+            end: "+=2400%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -463,16 +478,22 @@ function initializeAnimations() {
     const viewportHeight = window.innerHeight;
     // Calculate overflow (how much extends below viewport)
     const overflowAmount_5_1 = Math.max(0, imgHeight_5_1 - viewportHeight);
+    let tb_4_width = document.getElementsByClassName("tb_4")[0].offsetWidth;
 
-    tl5.to(".img_wrapper_5_1", { opacity: 1, duration: 3 })
+    tl5.to(".tb_4", { opacity: 1, duration: 3 })
+        .to(".tb_4", { x: - (tb_4_width + (window.innerWidth/2)), duration: 15 }, "<=0")
+        .to(".tb_4", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_4", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_5_1", { opacity: 1, duration: 3 })
         .to(".text_5_1", { y: "-80vh", duration: 3 })
         .to(".text_5_1", { opacity: 0, duration: 3 })
         .to(".img_wrapper_5_2", { x: "-100vw", duration: 3 }, "-=3")
         .to(".img_wrapper_5_3", { opacity: 1, duration: 3 })
-        .to(".img_5_3", { y: "-70vh", duration: 3 }, "-=3")
-        .to(".img_wrapper_5_4", { opacity: 1, duration: 3 })
+        .to(".img_wrapper_5_2", { filter: "saturate(0)", duration: 3 }, "<=0")
+        .to(".img_5_3", { y: "-80vh", duration: 3 }, "-=3")
+        .to(".img_wrapper_5_4", { opacity: 1, duration: 3 }, "+=2")
         .to(".text_5_2", { opacity: 1, duration: 3 })
-        .to(".img_5_4", { y: -overflowAmount_5_1, duration: 3 }, "<+=0")
+        .to(".img_5_4", { y: -overflowAmount_5_1, duration: 3 }, "+=1")
         .to(".text_5_2", { opacity: 0, duration: 3 })
         .to(".img_wrapper_red_wall", { y: "-150vh", duration: 3 }, "<-=1")
         .to(".img_wrapper_5_5", { x: "-100vw", duration: 3 })
@@ -496,8 +517,13 @@ function initializeAnimations() {
     });
 
     img_6_2_width = document.getElementsByClassName("img_6_2")[0].offsetWidth;
+    let tb_5_width = document.getElementsByClassName("tb_5")[0].offsetWidth;
 
-    tl6.to(".img_wrapper_6_1_left", { x: "-100vw", duration: 3 })
+    tl6.to(".tb_5", { opacity: 1, duration: 3 })
+        .to(".tb_5", { x: - (tb_5_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_5", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_5", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_6_1_left", { x: "-100vw", duration: 3 })
         .to(".img_wrapper_6_1_center", { x: "-67vw", duration: 3 }, "-=1")
         .to(".img_wrapper_6_1_right", { x: "-34.1vw", duration: 3 }, "-=1")
         .to(".text_6_1", { opacity: 1, duration: 3 })
@@ -510,7 +536,7 @@ function initializeAnimations() {
         scrollTrigger: {
             trigger: "#section6_2",
             start: "top top",
-            end: "+=1200%", // Longer scroll distance for the sequence
+            end: "+=400%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -518,7 +544,7 @@ function initializeAnimations() {
     });
 
     tl6_2.to(".text_6_3", { opacity: 1, duration: 2 })
-        .to(".img_wrapper_6_3", { x: "-100vw", duration: 2 }, "+=.5")
+        .to(".img_wrapper_6_3", { x: "-100vw", duration: 6 }, "+=.5")
         .to(".text_6_4", { opacity: 1, duration: 2 })
 
 
@@ -536,10 +562,14 @@ function initializeAnimations() {
     carousel_width_7 = document.getElementsByClassName("carusell_wrapper_7")[0].offsetWidth;
     const img_7_4 = document.getElementsByClassName("img_7_4")[0].offsetWidth;
     carousel_pos_7 = carousel_width_7 - img_7_4;
-
     text_7_2_height = document.getElementsByClassName("text_7_2")[0].offsetHeight;
+    let tb_6_width = document.getElementsByClassName("tb_7")[0].offsetWidth;
 
-    tl7.to(".carusell_wrapper_7", { opacity: 1, duration: 1 }, "-=1")
+    tl7.to(".tb_6", { opacity: 1, duration: 3 })
+        .to(".tb_6", { x: - (tb_6_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_6", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_6", { opacity: .7, duration: 3 }, "-=3")    
+        .to(".carusell_wrapper_7", { opacity: 1, duration: 1 }, "-=1")
         // .to(".text_7_1", { x: "-140vw", duration: 3 })
         .to(".carusell_wrapper_7", { x: -carousel_pos_7, duration: 12 }, "+=.5")
         .to(".text_7_2", { y: -(text_7_2_height + window.innerHeight), duration: 9 }, "-=3")
@@ -553,7 +583,7 @@ function initializeAnimations() {
         scrollTrigger: {
             trigger: "#section8",
             start: "top top",
-            end: "+=1200%", // Longer scroll distance for the sequence
+            end: "+=1500%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -565,12 +595,17 @@ function initializeAnimations() {
     gsap.set(".img_wrapper_8_5", { zIndex: 10 });
 
     img_8_7_height = document.getElementsByClassName("img_8_7")[0].offsetHeight;
+    let tb_7_width = document.getElementsByClassName("tb_8")[0].offsetWidth;
 
-    tl8.to(".img_wrapper_8_1", { opacity: 1, duration: 3, ease: "power2.out" })
-        .to(".img_wrapper_8_2", { y: "-180vh", duration: 5 }, "-=1")
-        .to(".img_wrapper_8_1", { opacity: 0, duration: 3 })
-        .to(".img_wrapper_8_3", { x: "-100vw", duration: 3 }, "<-=0")
-        .to(".text_8_1", { x: "-45vw", duration: 2 }, "-=1")
+    tl8.to(".tb_7", { opacity: 1, duration: 3 })
+        .to(".tb_7", { x: - (tb_7_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_7", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_7", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_8_1", { opacity: 1, duration: 3, ease: "power2.out" })
+        .to(".img_wrapper_8_2", { y: "-90vh", duration: 10 }, "-=1")
+        .to(".img_wrapper_8_1, .img_wrapper_8_2", { opacity: 0, duration: 3 })
+        .to(".img_wrapper_8_3", { x: "-100vw", duration: 6 }, "<-=0")
+        .to(".text_8_1", { x: "-75vw", duration: 2 }, "-=1")
         .to(".text_8_1", { opacity: 0, duration: 2 }, "+=1")
         .to(".img_wrapper_8_3", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_8_4", { x: "50vw", duration: 3 }, "-=2")
@@ -578,26 +613,33 @@ function initializeAnimations() {
         .to(".text_8_2", { opacity: 1, duration: 1 })
         .to(".img_wrapper_8_4", { x: "-50vw", duration: 3, ease: "power3.in" })
         .to(".img_wrapper_8_5", { x: "50vw", duration: 3, ease: "power3.in" }, "<=0")
-        .to(".text_8_2", { opacity: 0, duration: 1 })
+        .to(".text_8_2", { opacity: 0, duration: 1 }, "+=2")
         .to(".img_wrapper_8_6", { opacity: 1, duration: 1 })
         .to(".img_wrapper_8_6", { scale: 1.1, y: "-10%", duration: 3 })
         .to(".img_wrapper_8_6", { opacity: 0, duration: 3 })
         .to(".img_wrapper_8_7", { opacity: 1, duration: 3 }, "-=2")
-        .to(".img_wrapper_8_7", { y: - (img_8_7_height - window.innerHeight), duration: 5 }, "+=3")
+        .to(".img_wrapper_8_7", { y: - (img_8_7_height - window.innerHeight), duration: 5 }, "+=2")
 
     let tl9 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section9",
             start: "top top",
-            end: "+=1500%", // Longer scroll distance for the sequence
+            end: "+=1800%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
         }
     });
 
-    tl9.to(".img_wrapper_9_1", { filter: "saturate(1)", duration: 3, ease: "power2.out" })
-        .to(".img_wrapper_9_2", { x: "-100vw", filter: "saturate(1)", duration: 3 })
+    let tb_8_width = document.getElementsByClassName("tb_9")[0].offsetWidth;
+
+    tl9.to(".tb_8", { opacity: 1, duration: 3 })
+        .to(".tb_8", { x: - tb_8_width, duration: 15 }, "<=0")
+        .to(".tb_8", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_8", { opacity: .7, duration: 3 }, "<=3")
+        .to(".img_wrapper_9_1", { filter: "saturate(1)", duration: 2, ease: "power2.out" }, "-=1" )
+        .to(".img_wrapper_9_2", { x: "-100vw", duration: 3 })        
+        .to(".img_wrapper_9_2", { filter: "saturate(1)", duration: 3 }, "-=1" )
         .to(".text_9_1", { x: "50vw", duration: 3 }, "-=1")
         .to(".img_wrapper_9_3", { x: "-100vw", duration: 3 })
         .to(".text_9_1", { x: "-50vw", duration: 3 }, "-=.5")
@@ -613,7 +655,7 @@ function initializeAnimations() {
         scrollTrigger: {
             trigger: "#section10",
             start: "top top",
-            end: "+=600%", // Longer scroll distance for the sequence
+            end: "+=1200%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -624,16 +666,22 @@ function initializeAnimations() {
 
     text_giuliana_1_height = document.getElementsByClassName("text_10_1")[0].getBoundingClientRect().height;
     text_giuliana_2_height = document.getElementsByClassName("text_10_2")[0].getBoundingClientRect().height;
+    let tb_9_width = document.getElementsByClassName("tb_10")[0].offsetWidth;
 
-    tl10.to(".text_10_1", { y: -(text_giuliana_1_height + 100), duration: 3, ease: "power2.out" })
-        .to(".img_wrapper_10_1", { x: -(img_giuliana - window.innerWidth), duration: 3, ease: "power2.out" }, "-=2")
-        .to(".text_10_2", { y: -(text_giuliana_2_height + 100), duration: 3 }, "-=2")
+    tl10.to(".tb_9", { opacity: 1, duration: 3 })
+        .to(".tb_9", { x: - (tb_9_width + (window.innerWidth/2)), duration: 10 }, "<=0")
+        .to(".tb_9", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_9", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_10_1", { opacity: 1, duration: 3 }, "<=0")    
+        .to(".text_10_1", { y: -(text_giuliana_1_height + window.innerHeight), duration: 10, ease: "power2.out" })
+        .to(".img_wrapper_10_1", { x: -(img_giuliana - window.innerWidth), duration: 3, ease: "power2.out" }, "-=5")
+        .to(".text_10_2", { y: -(text_giuliana_2_height + 100), duration: 10 }, "-=2")
 
     let tl11 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section11",
             start: "top top",
-            end: "+=3200%", // Longer scroll distance for the sequence
+            end: "+=3500%", // Longer scroll distance for the sequence
             pin: true,
             scrub: true,
             // markers: true,
@@ -671,8 +719,14 @@ function initializeAnimations() {
 
     // Assign shuffled elements to variables eye_1 through eye_12
     var [eye_1, eye_2, eye_3, eye_4, eye_5, eye_6, eye_7, eye_8, eye_9, eye_10, eye_11, eye_12] = eyes;
+    let tb_10_width = document.getElementsByClassName("tb_10")[0].offsetWidth;
+    console.log("tb_10_width:", tb_10_width);
 
-    tl11.to(".img_wrapper_11_1", { y: - img_11_1_height, duration: 12 })
+    tl11.to(".tb_10", { opacity: 1, duration: 3 })
+        .to(".tb_10", { x: - (tb_10_width + (window.innerWidth/2)), duration: 15 }, "<=0")
+        .to(".tb_10", { opacity: 0, duration: 3 }, "-=1")
+        .to(".t_10", { opacity: .7, duration: 3 }, "-=3")
+        .to(".img_wrapper_11_1", { y: - img_11_1_height, duration: 12 })
         .to(".img_wrapper_11_2", { opacity: 1, duration: 3 })
         .to(".img_wrapper_11_1", { opacity: 0, duration: 3 }, "<")
         .to(".text_11_1", { opacity: 1, duration: 3 })
@@ -715,48 +769,70 @@ function initializeAnimations() {
         }
     });
 
-    tl12.to(".card_1", { rotationY: 180, duration: 3 })
-        .to(".word_1", { opacity: 1, duration: 3 })
+    tl12.to(".night_day", { opacity: .7, duration: 3 })
+        .to(".card-container_1", { opacity: 1, duration: 3 })
+        .to(".card-container_2", { opacity: 1, duration: 3 }, "-=4")
+        .to(".card_1", { rotationY: 180, duration: 3 })
         .to(".card_2", { rotationY: 180, duration: 3 }, "-=4")
-        .to(".word_2", { opacity: 1, duration: 3 })
         .to(".card-container_1", { opacity: 0, duration: 3 })
-        .to(".word_3", { opacity: 1, duration: 3 })
         .to(".card-container_2", { opacity: 0, duration: 3 }, "-=4")
-        .to(".word_4", { opacity: 1, duration: 3 })
+        .to(".card-container_5", { opacity: 1, duration: 3 })
+        .to(".card-container_6", { opacity: 1, duration: 3 }, "-=4")
+        .to(".card_5", { rotationY: 180, duration: 3 })
+        .to(".card_6", { rotationY: 180, duration: 3 }, "-=4")
+        .to(".card-container_5", { opacity: 0, duration: 3 })
+        .to(".card-container_6", { opacity: 0, duration: 3 }, "-=4")
+        .to(".night_day", { opacity: 0, duration: 3 })
+
+        .to(".word_1", { opacity: 1, duration: 3 })
+        .to(".word_2", { opacity: 1, duration: 3 })
         .to(".card-container_3", { opacity: 1, duration: 3 })
+        .to(".word_3", { opacity: 1, duration: 3 })
+        .to(".word_4", { opacity: 1, duration: 3 })
         .to(".word_5", { opacity: 1, duration: 3 })
-        .to(".card-container_4", { opacity: 1, duration: 3 }, "-=4")
         .to(".word_6", { opacity: 1, duration: 3 })
+        .to(".card-container_4", { opacity: 1, duration: 3 }, "-=4")
         .to(".card_3", { rotationY: 180, duration: 3 })
         .to(".word_7", { opacity: 1, duration: 3 })
         .to(".card_4", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_8", { opacity: 1, duration: 3 })
         .to(".card-container_3", { opacity: 0, duration: 3 })
         .to(".word_9", { opacity: 1, duration: 3 })
-        .to(".card-container_4", { opacity: 0, duration: 3 }, "-=4")
         .to(".word_10", { opacity: 1, duration: 3 })
-        .to(".card-container_5", { opacity: 1, duration: 3 })
         .to(".word_11", { opacity: 1, duration: 3 })
-        .to(".card-container_6", { opacity: 1, duration: 3 }, "-=4")
         .to(".word_12", { opacity: 1, duration: 3 })
-        .to(".card_5", { rotationY: 180, duration: 3 })
+        .to(".card-container_4", { opacity: 0, duration: 3 }, "-=4")
         .to(".word_13", { opacity: 1, duration: 3 })
-        .to(".card_6", { rotationY: 180, duration: 3 }, "-=4")
         .to(".word_14", { opacity: 1, duration: 3 })
-        .to(".card-container_5", { opacity: 0, duration: 3 })
         .to(".word_15", { opacity: 1, duration: 3 })
-        .to(".card-container_6", { opacity: 0, duration: 3 }, "-=4")
-        .to(".word_16", { opacity: 1, duration: 3 })
         .to(".card-container_7", { opacity: 1, duration: 3 })
-        .to(".word_17", { opacity: 1, duration: 3 })
+        .to(".word_16", { opacity: 1, duration: 3 })
         .to(".card-container_8", { opacity: 1, duration: 3 }, "-=4")
-        .to(".word_18", { opacity: 1, duration: 3 })
+        .to(".word_17", { opacity: 1, duration: 3 })
         .to(".card_7", { rotationY: 180, duration: 3 })
-        .to(".word_19", { opacity: 1, duration: 3 })
+        .to(".word_18", { opacity: 1, duration: 3 })
         .to(".card_8", { rotationY: 180, duration: 3 }, "-=4")
+        .to(".word_19", { opacity: 1, duration: 3 })
         .to(".word_20", { opacity: 1, duration: 3 })
 
 
+    tl12_2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#section12_2",
+            start: "top top",
+            end: "+=1200%", // Longer scroll distance for the sequence
+            pin: true,
+            scrub: true,
+            // markers: true,
+        }
+    });
+    
+    carousel_width_12_2 = document.getElementsByClassName("carusell_wrapper_12_2")[0].offsetWidth;
+    tl12_2.to(".carusell_wrapper_12_2", { opacity: 1, duration: 3 })
+        .to(".carusell_wrapper_12_2", { x: -carousel_width_12_2, duration: 10 }, "+=0")
+        .to(".carusell_wrapper_12_2", { opacity: 0, duration: 3 }, "-=3")   
+        .to(".img_wrapper_12_2_1", { opacity: 1, duration: 3 }, "-=3")
+        .to(".img_wrapper_12_2_2", { opacity: 1, duration: 3 })
 
 
     // Get the path element

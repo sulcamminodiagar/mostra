@@ -1,6 +1,6 @@
 const translations = {
     "it": {
-        "disclaimer": "<b>Avviso per il pubblico</b><br>Questa mostra contiene materiale fotografico e testuale che tratta la vita delle donne transgender nel contesto della prostituzione a Roma.<br><br> I contenuti sono espliciti e affrontano tematiche sensibili e adulte. <br><br>Non adatto a visitatori di età inferiore ai 16 anni.<br><br><b>Un’importante premessa:</b><br>Le immagini e le storie presentate sono il frutto di un incontro rispettoso e di una collaborazione consensuale. La presentazione unisce immagine e parola per dare visibilità a una realtà spesso invisibile, mettendo in luce non solo le ferite dell’esclusione, ma anche la resilienza, la speranza e la ricerca di dignità.",
+        "disclaimer": "<b>Avviso per il pubblico</b><br>La presente mostra contiene fotografie e testi che raccontano le esperienze di alcune donne transgender coinvolte nel lavoro sessuale nel contesto della città di Roma.<br><br>I contenuti, autorizzati dalle persone che appaiono e hanno collaborato, affrontano tematiche rivolte a un pubblico adulto. <br><br><b>Un’importante premessa:</b><br>Le immagini e le storie presentate sono il frutto di un incontro rispettoso e di una collaborazione consensuale. La presentazione unisce immagine e parola per dare visibilità a una realtà spesso invisibile, mettendo in luce non solo le ferite dell’esclusione, ma anche la resilienza, la speranza e la ricerca di dignità.",
         "menu_start": "Inizio",
         "section1_title": "Ai margini di Roma",
         "section1_title2": "storie di luci e ombre",
@@ -16,7 +16,7 @@ const translations = {
         "text_2_3": "Ho scelto per me il nome Noemi: un nome al 100% biblico. Dietro questo nome c’è la storia di una donna che aveva perso tutto, ma che con coraggio riuscì a ricostruire la propria vita, lasciando la sua terra per avventurarsi in un luogo nuovo e là ricominciare da capo. Mi ritrovo molto in questa storia.",
         "text_2_4": "Ripensando al periodo in cui ho iniziato ad accettare la mia vera identità, ricordo quanto mi sentissi giudicata e incompresa, anche dalla mia stessa famiglia. Tuttavia, sapevo che non potevo continuare a vivere in una “realtà” che non mi apparteneva. Se non avessi intrapreso questo cammino, sarei rimasta infelice per il resto della mia vita.",
         "text_2_5": "Mi identifico con una rosa e con la sua continua trasformazione. Questa immagine mi accompagna da quando ho preso coscienza della mia identità di donna trans. A vent’anni conobbi una donna trans bellissima, che ammirai subito. Diventammo amiche, e un giorno lei mi regalò un capo del suo abbigliamento. Quel gesto mi colpì profondamente: probabilmente lei aveva visto o avvertito in me “qualcosa” che io stessa non riuscivo ancora ad accettare. Quello fu il primo passo del mio percorso di transizione e in quel preciso momento ho cominciato a sbocciare.",
-        "section3_title": "Nel silenzio della note, nella strada... la solitudine",
+        "section3_title": "Nel silenzio della notte, nella strada... la solitudine",
         "text_3_1": "Ho iniziato a lavorare “per strada” a tredici anni. <br>La prima volta fu un’esperienza terribile: vendersi per denaro è qualcosa che lascia un segno profondo! <br>Lo feci per necessità, perché a casa non c’era niente da mangiare.",
         "text_3_2": "Con il tempo, quel lavoro è diventato un’abitudine. <br>E ti trasformi in una macchina, come se tu fossi un distributore automatico; inserisci i soldi e sai cosa accadrà subito dopo. <br> Alla fine, ti ci abitui. <br> Sapevo che dovevo sfruttare la mia giovinezza per guadagnare e aiutare la mia famiglia. E così ho fatto.",
         "text_3_3": "La mia famiglia non ha accettato la mia decisione. Mi sono sentita giudicata dai miei. Con il tempo, ho capito che quel loro atteggiamento era forse un modo maldestro di cercare di farmi desistere. Ma non ha funzionato. Non si trattava di un capriccio: si trattava della mia identità, la parte più profonda di me stessa. Nel cercare le risorse per affrontare la mia transizione, decisi di lasciare la mia città e trasferirmi in un’altra, dove iniziai a lavorare nel mondo della prostituzione.",
@@ -56,6 +56,7 @@ const translations = {
         "text_11_2": "Vorrei anche dirvi che, se avete un figlio o una figlia “diversi”, ascoltateli e accompagnateli con amore. <br><br>Vi chiedo di fare uno sforzo per comprendere la realtà trans in un modo nuovo. È facile costruire stereotipi che ridicolizzano gli “altri” da noi. Siamo persone con le nostre difficoltà e le nostre esperienze di vita. Vorrei che la gente ci guardasse con occhi diversi, con gli occhi del cuore.",
         "text_11_3": "Se Dio ha creato solo l’uomo e la donna, dove mi colloco io? So che lui non fa preferenze. E credo che, quando crediamo in un Dio-Amore, tutte le barriere cadono e diventiamo capaci di amare il prossimo, indipendentemente dal colore della sua pelle, dal suo sesso, dalla sua religione o dalla sua identità di genere. Dobbiamo imparare a prenderci cura gli uni degli altri.",
         "section12_title": "Parole",
+        "night_day": "notte e giorno",
         "cubo_word_1": "journey",
         "cubo_word_2": "cammina",
         "cubo_word_3": "courage",
@@ -82,7 +83,7 @@ const translations = {
         "resolution_warning_text": "Per una migliore esperienza, visualizza questa pagina in modalità orizzontale e con una risoluzione di almeno 1360px."
     },
     "en": {
-        "disclaimer": "<b>Notice to the public</b><br>This exhibition contains photographic and textual material dealing with the lives of transgender women in the context of prostitution in Rome.<br><br> Content is explicit and addresses sensitive and adult themes. <br><br>Not suitable for visitors under 16 years of age.<br><br><b>An important premise:</b><br>The images and stories presented are the result of a respectful encounter and consensual collaboration. The presentation combines image and word to give visibility to a reality often invisible, highlighting not only the wounds of exclusion, but also resilience, hope, and the search for dignity.",
+        "disclaimer": "<b>Notice to the public</b><br>This exhibition contains photographs and texts that recount the experiences of some transgender women involved in sex work in the context of the city of Rome.<br><br>The contents, authorized by the people who appear and have collaborated, address topics intended for an adult audience.<br><br><b>An important premise:</b><br>The images and stories presented are the result of a respectful encounter and consensual collaboration. The presentation combines image and word to give visibility to a reality often invisible, highlighting not only the wounds of exclusion, but also resilience, hope, and the search for dignity.",
         "menu_start": "Home",
         "section1_title": "On the margins of Rome",
         "section1_title2": "stories of light and shadows",
@@ -138,6 +139,7 @@ const translations = {
         "text_11_2": "I would also like to tell you that, if you have a “different” son or daughter, listen to them and accompany them with love. <br><br>I ask you to make an effort to understand the trans reality in a new way. It is easy to build stereotypes that ridicule “others” from us. We are people with our difficulties and our life experiences. I wish people would look at us with different eyes, with the eyes of the heart.",
         "text_11_3": "If God created only man and woman, where do I fit in? I know he doesn't show favoritism. And I believe that, when we believe in a God-Love, all barriers fall and we become capable of loving our neighbor, regardless of the color of their skin, their sex, their religion, or their gender identity. We must learn to take care of each other.",
         "section12_title": "Words",
+        "night_day": "night and day",
         "cubo_word_1": "journey",
         "cubo_word_2": "walk",
         "cubo_word_3": "courage",
@@ -164,7 +166,7 @@ const translations = {
         "resolution_warning_text": "For the best experience, please view this page in landscape mode and with a resolution of at least 1360px."
     },
     "es": {
-        "disclaimer": "<b>Aviso al público</b><br>Esta exposición contiene material fotográfico y textual que trata sobre la vida de mujeres transgénero en el contexto de la prostitución en Roma.<br><br> Los contenidos son explícitos y abordan temas sensibles y para adultos. <br><br>No apto para visitantes menores de 16 años.<br><br><b>Una premisa importante:</b><br>Las imágenes y las historias presentadas son fruto de un encuentro respetuoso y de una colaboración consensuada. La presentación une imagen y palabra para dar visibilidad a una realidad a menudo invisible, poniendo de relieve no solo las heridas de la exclusión, sino también la resiliencia, la esperanza y la búsqueda de dignidad.",
+        "disclaimer": "<b>Aviso al público</b><br>Esta exposición contiene fotografías y textos que relatan las experiencias de algunas mujeres transgénero involucradas en el trabajo sexual en el contexto de la ciudad de Roma.<br><br>Los contenidos, autorizados por las personas que aparecen y han colaborado, abordan temáticas dirigidas a un público adulto.<br><br><b>Una premisa importante:</b><br>Las imágenes y las historias presentadas son fruto de un encuentro respetuoso y de una colaboración consensuada. La presentación une imagen y palabra para dar visibilidad a una realidad a menudo invisible, poniendo de relieve no solo las heridas de la exclusión, sino también la resiliencia, la esperanza y la búsqueda de dignidad.",
         "menu_start": "Inicio",
         "section1_title": "En los márgenes de Roma",
         "section1_title2": "historias de luces y sombras",
@@ -220,6 +222,7 @@ const translations = {
         "text_11_2": "También me gustaría decirles que, si tienen un hijo o una hija “diferentes”, escúchenlos y acompáñenlos con amor. <br><br>Les pido que hagan un esfuerzo por comprender la realidad trans de una manera nueva. Es fácil construir estereotipos que ridiculizan a los “otros” de nosotros. Somos personas con nuestras dificultades y nuestras experiencias de vida. Me gustaría que la gente nos mirara con ojos diferentes, con los ojos del corazón.",
         "text_11_3": "Si Dios creó solo al hombre y a la mujer, ¿dónde me ubico yo? Sé que Él no hace preferencias. Y creo que, cuando creemos en un Dios-Amor, todas las barreras caen y nos volvemos capaces de amar al prójimo, independientemente del color de su piel, de su sexo, de su religión o de su identidad de género. Debemos aprender a cuidarnos los unos a los otros.",
         "section12_title": "Palabras",
+        "night_day": "noche y día",
         "cubo_word_1": "journey",
         "cubo_word_2": "camina",
         "cubo_word_3": "courage",

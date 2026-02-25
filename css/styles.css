@@ -368,6 +368,18 @@ section {
     z-index: 20;
     color: rgb(180, 180, 180);
     font-family: 'Allura', cursive;
+    opacity: 0;
+}
+.title_big {
+    position: absolute;
+    top: 20%;
+    left: 100%;
+    font-size: 25rem;
+    z-index: 20;
+    white-space: nowrap;
+    color: orange;
+    font-family: 'Allura', cursive;
+    opacity: 0;
 }
 
 h2 {
@@ -621,8 +633,8 @@ b {
     top: 100%;
     left: 0;
     opacity: 1;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20vh, black 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 20vh, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10vh, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10vh, black 100%);
 }
 
 .img_2_6 {
@@ -670,7 +682,7 @@ b {
     position: absolute;
     top: 25%;
     right: 7%;
-    width: 45vw;
+    width: 50vw;
     opacity: 0;
 }
 
@@ -851,10 +863,10 @@ b {
 
 .img_wrapper_4_2 {
     position: absolute;
-    top: 20vh;
+    top: 5vh;
     left: 60vw;
-    width: 30vw;
-    height: 70vh;
+    width: 35vw;
+    height: 90vh;
     opacity: 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -876,7 +888,7 @@ b {
     left: 5vw;
     opacity: 0;
     overflow: hidden;
-    border-radius: 5rem;
+    border-radius: 3rem;
 }
 
 .img_4_3 {
@@ -1056,6 +1068,7 @@ b {
     top: 0;
     left: 100vw;
     opacity: 1;
+    filter: saturate(1);
 }
 
 .img_5_2 {
@@ -1067,13 +1080,13 @@ b {
 .img_wrapper_5_3 {
     position: absolute;
     top: 100vh;
-    left: 60vw;
+    left: 50vw;
     opacity: 1;
 }
 
 .img_5_3 {
     height: auto;
-    width: 30vw;
+    width: 45vw;
     max-width: 100%;
     object-fit: contain;
     border-radius: 1rem;
@@ -1432,11 +1445,11 @@ b {
 .img_wrapper_8_2 {
     position: absolute;
     top: 100vh;
-    left: 65vw;
+    left: 60vw;
 }
 
 .img_8_2 {
-    height: 70vh;
+    height: 80vh;
     width: auto;
     object-fit: contain;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -1457,9 +1470,9 @@ b {
 
 .text_8_1 {
     position: absolute;
-    top: 25vh;
+    bottom: 5vh;
     left: 100vw;
-    width: 40%;
+    width: 70%;
 }
 
 @media (max-width: 1600px) {
@@ -1633,7 +1646,7 @@ b {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 1;
+    opacity: .3;
 }
 
 .img_10_1 {
@@ -1773,6 +1786,21 @@ b {
 
 /* section 12 */
 
+.night_day {
+    position: absolute;
+    bottom: 5vh;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 9rem;
+    color: orange;
+    opacity: 0;
+}
+
 .card-container_1 {
     position: absolute;
     top: 10vh;
@@ -1780,6 +1808,7 @@ b {
     width: 40vw;
     height: 50vh;
     perspective: 1200px;
+    opacity: 0;
 }
 
 /* Card wrapper - Handles the 3D transform */
@@ -1829,6 +1858,7 @@ b {
     width: 40vw;
     height: 50vh;
     perspective: 1200px;
+    opacity: 0;
 }
 
 .card-container_3 {
@@ -1890,11 +1920,6 @@ b {
     perspective: 1200px;
     opacity: 0;
 }
-
-
-
-
-
 
 .word_box {
     position: absolute;
@@ -2011,7 +2036,56 @@ b {
     left: 55%;
 }
 
+.carusell_wrapper_12_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
 
+.image-row_12_2 {
+    display: flex;
+    height: 100vh;
+    /* width: 100%; */
+    gap: 5vw;
+    /* Optional: adds space between images */
+}
+.image-row_12_2 img {
+    flex: 1;
+    /* Each image takes equal width */
+    height: 100%;
+    /* Fill the container height */
+    object-fit: cover;
+    /* Maintains aspect ratio, crops if needed */
+    /* OR use object-fit: contain; if you want full image visible */
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.img_wrapper_12_2_1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.img_12_2_1 {
+    height: auto;
+    width: 100vw;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.img_wrapper_12_2_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.img_12_2_2 {
+    height: auto;
+    width: 100vw;
+    object-fit: cover;
+    border-radius: 1rem;
+}
 
 /* section 13 */
 #section13 {
