@@ -605,7 +605,7 @@ function initializeAnimations() {
         .to(".img_wrapper_8_2", { y: "-90vh", duration: 10 }, "-=1")
         .to(".img_wrapper_8_1, .img_wrapper_8_2", { opacity: 0, duration: 3 })
         .to(".img_wrapper_8_3", { x: "-100vw", duration: 6 }, "<-=0")
-        .to(".text_8_1", { x: "-75vw", duration: 2 }, "-=1")
+        .to(".text_8_1", { x: "-85vw", duration: 2 }, "-=1")
         .to(".text_8_1", { opacity: 0, duration: 2 }, "+=1")
         .to(".img_wrapper_8_3", { opacity: 0, duration: 3 }, "-=2")
         .to(".img_wrapper_8_4", { x: "50vw", duration: 3 }, "-=2")
@@ -631,13 +631,13 @@ function initializeAnimations() {
         }
     });
 
-    let tb_8_width = document.getElementsByClassName("tb_9")[0].offsetWidth;
+    let tb_8_width = document.getElementsByClassName("tb_8")[0].offsetWidth;
 
     tl9.to(".tb_8", { opacity: 1, duration: 3 })
-        .to(".tb_8", { x: - tb_8_width, duration: 15 }, "<=0")
-        .to(".tb_8", { opacity: 0, duration: 3 }, "-=1")
-        .to(".t_8", { opacity: .7, duration: 3 }, "<=3")
-        .to(".img_wrapper_9_1", { filter: "saturate(1)", duration: 2, ease: "power2.out" }, "-=1" )
+        .to(".tb_8", { x: -(tb_8_width+(window.innerWidth/2)), duration: 15 }, "+=0")
+        .to(".tb_8", { opacity: 0, duration: 3 }, "-=0")
+        .to(".t_8", { opacity: .7, duration: 3 }, "+=0")
+        .to(".img_wrapper_9_1", { filter: "saturate(1)", duration: 2, ease: "power2.out" }, "-=3" )
         .to(".img_wrapper_9_2", { x: "-100vw", duration: 3 })        
         .to(".img_wrapper_9_2", { filter: "saturate(1)", duration: 3 }, "-=1" )
         .to(".text_9_1", { x: "50vw", duration: 3 }, "-=1")
